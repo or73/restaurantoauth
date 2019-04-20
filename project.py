@@ -17,14 +17,15 @@ Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-
 # Create a state token to prevent request forgery.
 # Store it in the session for later validation
 @app.route('/login')
 def showLogin():
     state = ''.join(random.choice(string.ascii_uppercase + string.digits) for x in xrange(32))
     login_session['state'] = state
-    return 'The current session state is %s' % login_session['state']
+    # return 'The current session state is %s' % login_session['state']
+    print('The current session state is %s' % login_session['state'])
+    return render_template('login.html')
 
 
 # JSON APIs to view Restaurant Information
