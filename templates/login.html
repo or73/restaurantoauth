@@ -12,21 +12,15 @@
     </head>
     <body>
         <!-- GOOGLE SIGN IN BUTTON -->
-        <div id='signinButton' class='g-signin2' data-onsuccess='onSignIn' data-scope="openid email"
-                        data-clientid="227515129287-d8bpeg70cv166c00rmu0g6m1j3d4kbfr.apps.googleusercontent.com"
-                        data-redirecturi="postmessage"
-                        data-accesstype="offline"
-                        data-cookiepolicy="single_host_origin"
-                        data-approvalprompt="force">
-                <!--<span   class="g-signin2"
-                        data-scope="openid email"
-                        data-clientid="13140951618-15nik769cellkubaqnjk5facdib2dh4d.apps.googleusercontent.com"
-                        data-redirecturi="postmessage"
-                        data-accesstype="offline"
-                        data-cookiepolicy="single_host_origin"
-                        data-callback="signInCallback"
-                        data-approvalprompt="force">
-            </span>-->
+        <div id='signinButton'
+             class='g-signin2'
+             data-onsuccess='onSignIn'
+             data-scope="openid email"
+             data-clientid="227515129287-d8bpeg70cv166c00rmu0g6m1j3d4kbfr.apps.googleusercontent.com"
+             data-redirecturi="postmessage"
+             data-accesstype="offline"
+             data-cookiepolicy="single_host_origin"
+             data-approvalprompt="force">
         </div> <!-- /#signinButton -->
         <a href='#' onclick="signOut();">Sign out</a>
         <!-- END GOOGLE PLUS SIGN IN BUTTON -->
