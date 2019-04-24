@@ -24,15 +24,11 @@
              data-cookiepolicy="single_host_origin"
              data-approvalprompt="force">
         </div> <!-- /#signinButton -->
-        <div><button class='btn btn-default'><a href='#' onclick="signOut();">Sign out</a></button></div>
+        <div><button class='btn btn-default'><a href='#' onclick="signOut();">Google - Sign out</a></button></div>
 
         <!-- END GOOGLE PLUS SIGN IN BUTTON -->
 
-        <button class='btn btn-default' id='fb-btn'>
-            <fb:login-button scope="public_profile,email" onlogin="sendTokenToServer();">
-                <a href='javascript:sendTokenToServer()'>Login with Facebook</a>
-            </fb:login-button>
-        </button>
+
 
         <div id='result'>
         </div> <!-- /#result -->
@@ -95,6 +91,11 @@
                     version    : 'v2.8' // use version 2.8
                 });
             };
+            function logout(accessToken) {
+                FB.logout(function (response) {
+                    console.log('User logout: ', response)
+                });
+            }
 
             // Load the SDK asynchronously
             (function(d, s, id) {
@@ -144,5 +145,11 @@
             // <!-- END FACEBOOK SIGN IN -->
         </script>
         <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+        <button class='btn btn-default' id='fb-btn'>
+            <fb:login-button scope="public_profile,email" onlogin="javascript:sendTokenToServer();">
+                <a href='javascript:sendTokenToServer()'>Login with Facebook</a>
+            </fb:login-button>
+        </button>
+        <div><button class='btn btn-default'><a href='#' onclick="javascript:logout();">Facebook - Sign out</a></button></div>
     </body>
 </html>
